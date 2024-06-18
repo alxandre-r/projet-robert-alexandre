@@ -11,7 +11,7 @@ const users = require('./users.json');
 
 const SECRET_KEY = 'wav_scrt_key';
 
-const allowedOrigins = ['http://localhost:4200', 'https://project-frontend-9pbr.onrender.com/'];
+const allowedOrigins = ['http://localhost:4200', 'https://project-frontend-9pbr.onrender.com'];
 
 const corsOptions = {
     origin: function (origin, callback) {
