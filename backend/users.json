@@ -1,0 +1,54 @@
+[
+  {
+    "first_name": "d",
+    "last_name": "ff",
+    "phone_number": "0688592801",
+    "email": "chae.damo99@gmail.com",
+    "postal_code": "56800",
+    "city": "OuiCity",
+    "country": "France",
+    "login": "S23",
+    "gender": "Female",
+    "password": "$2a$08$nw/6DrrFlhXAQHL10qEuIOv3oCeYRsdkdA5d4QzQ8z2MuDMoeZbBa",
+    "id": 44
+  },
+  {
+    "first_name": "d",
+    "last_name": "ff",
+    "phone_number": "0688592801",
+    "email": "chae.damo99@gmail.com",
+    "postal_code": "56800",
+    "city": "OuiCity",
+    "country": "France",
+    "login": "S3",
+    "gender": "Female",
+    "password": "$2a$08$6iutQO5P12ps.A3qfUky3OjTFPbxgQ2elqC2/lw.GBA6SBgUtCv5i",
+    "id": 45
+  },
+  {
+    "first_name": "d",
+    "last_name": "ff",
+    "phone_number": "0688592801",
+    "email": "chae.damo99@gmail.com",
+    "postal_code": "56800",
+    "city": "OuiCity",
+    "country": "France",
+    "login": "S5",
+    "gender": "ac-130 combat helicopter",
+    "password": "$2a$08$UbbbRerSR7dAH5JtayZAbuAf7i5pIDfBCUnNMgxV7yRL9Ek11sEG6",
+    "id": 46
+  },
+  {
+    "first_name": "Hamza",
+    "last_name": "LOUADA",
+    "phone_number": "0781770059",
+    "email": "hlouada@gmail.com",
+    "postal_code": "67800",
+    "city": "Hoenheim",
+    "country": "France",
+    "gender": "Male",
+    "login": "hamzz",
+    "password": "$2a$08$yZQl.PJ/ntvLQdy0Fa41z.CiR6l62cNWU1r6o3vszJvVWz.temBJ.",
+    "id": 47
+  }
+]

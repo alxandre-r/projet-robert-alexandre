@@ -1,0 +1,120 @@
+<div class="container mx-auto items-center" style="max-width: 1300px; min-height: 100vh;">
+    <div class="w-full">
+        <h1 class="text-5xl font-bold mt-16 text-center">Welcome to the tripleS store</h1>
+
+        <!-- Recherche -->
+        <div class="my-12 flex sm:flex-row flex-col rounded-lg bg-white border-2 border-gray-100 shadow-md w-2/5 mx-auto">
+            <div class="flex flex-row">
+                <div class="relative">
+                    <select
+                        class="h-full rounded-l appearance-none bg-white text-gray-700 py-4 px-8 pr-8 leading-tight focus:bg-white focus:border-gray-500 border-r"
+                        (change)="filterByType($event)">
+                        <option>Tous les types</option>
+                        <option>Mini Album</option>
+                        <option>Single Album</option>
+                        <option>Studio Album</option>
+                    </select>
+                    <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="block relative">
+                <span class="h-full absolute flex items-center pl-2">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current text-gray-500">
+                        <path
+                            d="M10 4a6 6 0 100 12 6 6 0 000-12zm-8 6a8 8 0 1114.32 4.906l5.387 5.387a1 1 0 01-1.414 1.414l-5.387-5.387A8 8 0 012 10z">
+                        </path>
+                    </svg>
+                </span>
+                <input placeholder="Search ..."
+                    class="rounded-r rounded-l sm:rounded-l-none py-4 px-8 pr-8 w-full bg-white text-s placeholder-gray-400 text-gray-700 focus:bg-white focus:placeholder-gray-600 focus:text-gray-700 focus:outline-none" 
+                    (input)="searchByName($event)"/>
+            </div>
+        </div>
+
+        <!-- All albums list -->
+        <div *ngIf="isSearching">
+            <h1 class="text-4xl font-bold mt-4">Search Results</h1>
+            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <div class="all-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
+                <ng-container *ngFor="let item of products | async">
+                    <div class="all-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
+                        <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                        <p class="font-semibold text-center">{{item.album_name}}</p>
+                        <p class="font-bold text-center">{{item.price}}€</p>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <!-- Mini albums list -->
+        <div *ngIf="!isSearching && (selectedType === 'Tous les types' || selectedType === 'Mini Album')">
+            <h1 class="text-4xl font-bold mt-4">Mini Albums</h1>
+            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <div class="mini-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
+                <ng-container *ngFor="let item of products | async">
+                    <div *ngIf="item.album_type === 'Mini Album'">
+                        <div class="mini-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
+                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                            <p class="font-semibold text-center">{{item.album_name}}</p>
+                            <p class="font-bold text-center">{{item.price}}€</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <!-- Single albums list -->
+        <div *ngIf="!isSearching && (selectedType === 'Tous les types' || selectedType === 'Single Album')">
+            <h1 class="text-4xl font-bold mt-4">Single Albums</h1>
+            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <div class="single-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
+                <ng-container *ngFor="let item of products | async">
+                    <div *ngIf="item.album_type === 'Single Album'">
+                        <div class="single-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
+                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                            <p class="font-semibold text-center">{{item.album_name}}</p>
+                            <p class="font-bold text-center">{{item.price}}€</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <!-- Studio albums list -->
+        <div *ngIf="!isSearching && (selectedType === 'Tous les types' || selectedType === 'Studio Album')">
+            <h1 class="text-4xl font-bold mt-4">Studio Albums</h1>
+            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <div class="studio-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
+                <ng-container *ngFor="let item of products | async">
+                    <div *ngIf="item.album_type === 'Studio Album'">
+                        <div class="studio-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
+                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                            <p class="font-semibold text-center">{{item.album_name}}</p>
+                            <p class="font-bold text-center">{{item.price}}€</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <!-- All albums list -->
+        <div *ngIf="!isSearching && selectedType === 'Tous les types'">
+            <h1 class="text-4xl font-bold mt-4">All Albums</h1>
+            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <div class="all-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
+                <ng-container *ngFor="let item of products | async">
+                    <div class="all-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
+                        <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                        <p class="font-semibold text-center">{{item.album_name}}</p>
+                        <p class="font-bold text-center">{{item.price}}€</p>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

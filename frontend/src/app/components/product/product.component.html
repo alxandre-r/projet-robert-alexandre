@@ -1,0 +1,51 @@
+<div class="container mx-auto py-8" style="max-width: 1300px; min-height: 75vh;" *ngIf="product">
+    <div class="flex">
+        <!-- Image du produit -->
+        <div class="w-1/3">
+            <div class="flex items-center">
+                <img [src]="getProductImageUrl()" [alt]="product.album_name" class="w-full" style="max-width: 400px;">
+            </div>
+        </div>
+        <!-- Détails du produit -->
+        <div class="w-2/3 px-8 flex flex-col justify-between">
+            <div>
+                <h1 class="text-5xl font-bold mt-4 mb-4">{{product.album_name}}</h1>
+                <p class="mt-8">{{product.description}}</p>
+                <p class="mt-16">Price: {{product.price}}</p>
+                <p class="my-2">Type: {{product.album_type}}</p>
+                <p class="my-2">Release date : {{product.release_date}}</p>
+
+                <!-- Sélecteur de version (si plus d'une version) -->
+                <div class="my-4">
+                    <label for="version" class="block ">Version:</label>
+                    <select id="version" name="version" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <ng-container *ngIf="product.versions">
+                            <option [value]="version" *ngFor="let version of product.versions.split(',')">{{version}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+            </div>
+            <!-- Bouton Ajouter au panier -->
+            <button class="bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline self-end">
+                Ajouter au panier
+            </button>
+        </div>
+    </div>
+    <h1 class="text-3xl font-bold mt-32"> What's inside </h1>
+    <div class="my-8 flex justify-center">
+        <img [src]="getProductDetailsImageUrl()" alt="inside of the product" class="w-full" style="max-width: 800px;">
+    </div>
+
+    <h1 class="text-3xl font-bold mt-32"> Similar products </h1>
+    <div class="Similar-product grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <ng-container *ngFor="let item of products | async">
+            <div *ngIf="product && (item.id == product.id -1 || item.id == product.id - 2 || item.id == product.id + 1 || item.id == product.id + 2)">
+                <div class="Similar-product bg-white p-4 shadow-md rounded-lg mx-auto">
+                    <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                    <p class="font-semibold text-center">{{item.album_name}}</p>
+                    <p class="font-bold text-center">{{item.price}}€</p>
+                </div>
+            </div>
+        </ng-container>
+    </div> 
+</div>

@@ -1,0 +1,36 @@
+<div class="bg-black text-white flex justify-center items-center" style="height: 10vh; min-height: 80px;">
+    <header class="grid grid-cols-2 justify-center w-full mx-auto" style="max-width: 1300px;">
+        <!-- Logo and title (left) -->
+        <div class="header-title flex items-center" (click)="redirectToHome()">
+            <div class="logo">
+                <img src="assets/images/logos/logoTripleS.jpg" alt="Logo" class="w-20 h-auto">
+            </div>
+            <div class="title">
+                <h1 class="text-2xl font-bold">tripleS store</h1>
+            </div>
+        </div>
+    
+        <!-- Button container (right) -->
+        <div class="flex items-center justify-end">
+            <!-- Checkout Button -->
+            <div class="header-button mr-4" (click)="redirectToCheckout()">
+                <a routerLink="/checkout" class="flex items-center">
+                    Checkout
+                </a>
+            </div>
+            <!-- Login/Logout Button -->
+            <div class="header-button" *ngIf="isLoggedIn; else loggedOutButton" (click)="onLogout()">
+                <a class="flex items-center">
+                    Logout
+                </a>
+            </div>
+            <ng-template #loggedOutButton>
+                <div class="header-button" (click)="redirectToLogin()">
+                    <a class="flex items-center">
+                        Login
+                    </a>
+                </div>
+            </ng-template>
+        </div>
+    </header>
+</div>
