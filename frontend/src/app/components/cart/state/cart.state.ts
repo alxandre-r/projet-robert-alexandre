@@ -22,13 +22,16 @@ export interface CartStateModel {
     static getCartProducts(state: CartStateModel) {
       return state.items || [];
     }
-  
-      @Selector()
-      static getCartTotalPrice(state: CartStateModel){
-          return state.items.reduce((total, productWrapper) => {
-              return total + (Number(productWrapper.product.price) * productWrapper.quantity);
-            }, 0);
-      }
+    
+    @Selector()
+    static getCartTotalPrice(state: CartStateModel) {
+      return state.items.reduce((total, productWrapper) => {
+        const productPrice = Number(productWrapper.product.price);
+        const productTotal = productPrice * productWrapper.quantity;
+        console.log(`Product ID: ${productWrapper.product.id}, Price: ${productPrice}, Quantity: ${productWrapper.quantity}, Product Total: ${productTotal}`);
+        return total + productTotal;
+      }, 0);
+    }
   
       @Selector()
       static getCartTotalItems(state: CartStateModel){

@@ -14,16 +14,6 @@
                 <p class="mt-16">Price: {{product.price}}</p>
                 <p class="my-2">Type: {{product.album_type}}</p>
                 <p class="my-2">Release date : {{product.release_date}}</p>
-
-                <!-- Sélecteur de version (si plus d'une version) -->
-                <div class="my-4">
-                    <label for="version" class="block ">Version:</label>
-                    <select id="version" name="version" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                        <ng-container *ngIf="product.versions">
-                            <option [value]="version" *ngFor="let version of product.versions.split(',')">{{version}}</option>
-                        </ng-container>
-                    </select>
-                </div>
             </div>
             <!-- Bouton Ajouter au panier -->
             <button class="bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline self-end" (click)="addToCart(product)" (click)="showSuccessPopup=true">

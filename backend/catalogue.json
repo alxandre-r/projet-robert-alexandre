@@ -2,71 +2,64 @@
     {
         "id": 1,
         "album_name":"Acid Angel from Asia <Access>", 
-        "price": "28,00", 
+        "price": 28.00, 
         "album_cover" : "",
         "album_type" : "Mini Album",
         "release_date" : "28/10/2022",
-        "description" : "Acid Angel from Asia <Access> (also known simply as Access) is the debut mini album by Acid Angel from Asia. It was released on October 28, 2022 with 'Generation' serving as the album's title track. The physical album comes in two versions: A and B.",
-        "versions" : "A,B"
+        "description" : "Acid Angel from Asia <Access> (also known simply as Access) is the debut mini album by Acid Angel from Asia. It was released on October 28, 2022 with 'Generation' serving as the album's title track. The physical album comes in two versions: A and B."
     },
     {
         "id": 2,
         "album_name":"ASSEMBLE", 
-        "price": "25,00",
+        "price": 24.99,
         "album_cover" : "",
         "album_type" : "Mini Album",
         "release_date" : "13/02/2023",
-        "description" : "Assemble is the debut mini album by tripleS. It was released on February 13, 2023 with 'Rising' serving as the album's title track. The physical album comes in two versions: A and B.",
-        "versions" : "A,B"
+        "description" : "Assemble is the debut mini album by tripleS. It was released on February 13, 2023 with 'Rising' serving as the album's title track. The physical album comes in two versions: A and B."
     },
     {
         "id": 3,
         "album_name":"+(KR)ystal Eyes <AESTHETIC>", 
-        "price": "26,00", 
+        "price": 26.19, 
         "album_cover" : "",
         "album_type" : "Mini Album",
         "release_date" : "04/04/2023",
-        "description" : "+(KR)ystal Eyes <Aesthetic> (also known simply as Aesthetic) is the debut mini album by +(KR)ystal Eyes. It was released on May 4, 2023 with 'Cherry Talk' serving as the album's title track. The physical album comes in two versions: A and B.",
-        "versions" : "A,B"
+        "description" : "+(KR)ystal Eyes <Aesthetic> (also known simply as Aesthetic) is the debut mini album by +(KR)ystal Eyes. It was released on May 4, 2023 with 'Cherry Talk' serving as the album's title track. The physical album comes in two versions: A and B."
     },
     {
         "id": 5,
         "album_name":"LOVElution <ↀ>", 
-        "price": "24,00", 
+        "price": 23.99, 
         "album_cover" : "",
         "album_type" : "Mini Album",
         "release_date" : "17/08/2023",
-        "description" : "LOVElution <ↀ> (also known simply as ↀ; pronounced as Muhan) is the debut mini album by LOVElution. It was released on August 17, 2023 with 'Girls' Capitalism' serving as the album's title track. The physical album comes in two versions: A and B.",
-        "versions" : "A,B"
+        "description" : "LOVElution <ↀ> (also known simply as ↀ; pronounced as Muhan) is the debut mini album by LOVElution. It was released on August 17, 2023 with 'Girls' Capitalism' serving as the album's title track. The physical album comes in two versions: A and B."
     },
     {
         "id": 6,
         "album_name":"EVOLution <⟡>", 
-        "price": "24,00", 
+        "price": 24.49, 
         "album_cover" : "",
         "album_type" : "Mini Album",
         "release_date" : "11/10/2023",
-        "description" : "EVOLution <⟡> (also known simply as ⟡; pronounced as Mujuk) is the debut mini album by EVOLution. It was released on October 11, 2023 with 'Invincible' serving as the album's title track. The physical album comes in three versions: A, B and QR.",
-        "versions" : "A,B,QR"
+        "description" : "EVOLution <⟡> (also known simply as ⟡; pronounced as Mujuk) is the debut mini album by EVOLution. It was released on October 11, 2023 with 'Invincible' serving as the album's title track. The physical album comes in three versions: A, B and QR."
     },
     {
         "id": 7,
         "album_name":"Aria <Structure Of Sadness>", 
-        "price": "19,00", 
+        "price": 19.99, 
         "album_cover" : "",
         "album_type" : "Single Album",
         "release_date" : "15/01/2024",
-        "description" : "'Aria <Structure of Sadness>' (also known simply as Structure of Sadness) is the debut single album by Aria. It was released on January 15, 2024 with 'Door' serving as the single's title track. The physical album comes in one version: QR.",
-        "versions" : "QR"
+        "description" : "'Aria <Structure of Sadness>' (also known simply as Structure of Sadness) is the debut single album by Aria. It was released on January 15, 2024 with 'Door' serving as the single's title track. The physical album comes in one version: QR."
     },
     {
         "id": 8,
         "album_name":"ASSEMBLE24", 
-        "price": "29,00", 
+        "price": 29.99, 
         "album_cover" : "",
         "album_type" : "Studio Album",
         "release_date" : "08/05/2024",
-        "description" : "<Assemble24> (stylized in all-caps) is the first full-length album by tripleS. It was released on May 8, 2024 with 'Girls Never Die' serving as the album's title track. This album marks tripleS' first release as a 24-member group, following the additions of Kotone, YeonJi, Nien, SoHyun, Xinyu, Mayu, Lynn, JooBin, HaYeon, ShiOn, ChaeWon, Sullin, SeoAh, and JiYeon. The physical album comes in five versions: A, B, C, QR, and Objekt Music Album.",
-        "versions" : "A,B,C,QR,Objekt Music Album"
+        "description" : "<Assemble24> (stylized in all-caps) is the first full-length album by tripleS. It was released on May 8, 2024 with 'Girls Never Die' serving as the album's title track. This album marks tripleS' first release as a 24-member group, following the additions of Kotone, YeonJi, Nien, SoHyun, Xinyu, Mayu, Lynn, JooBin, HaYeon, ShiOn, ChaeWon, Sullin, SeoAh, and JiYeon. The physical album comes in five versions: A, B, C, QR, and Objekt Music Album."
     }
 ]
