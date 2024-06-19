@@ -37,7 +37,7 @@
         <!-- All albums list -->
         <div *ngIf="isSearching">
             <h1 class="text-4xl font-bold mt-4">Search Results</h1>
-            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
             <div class="all-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div class="all-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
@@ -52,7 +52,7 @@
         <!-- Mini albums list -->
         <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Mini Album')">
             <h1 class="text-4xl font-bold mt-4">Mini Albums</h1>
-            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
             <div class="mini-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div *ngIf="item.album_type === 'Mini Album'">
@@ -69,7 +69,7 @@
         <!-- Single albums list -->
         <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Single Album')">
             <h1 class="text-4xl font-bold mt-4">Single Albums</h1>
-            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
             <div class="single-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div *ngIf="item.album_type === 'Single Album'">
@@ -86,7 +86,7 @@
         <!-- Studio albums list -->
         <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Studio Album')">
             <h1 class="text-4xl font-bold mt-4">Studio Albums</h1>
-            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
             <div class="studio-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div *ngIf="item.album_type === 'Studio Album'">
@@ -103,7 +103,7 @@
         <!-- All albums list -->
         <div *ngIf="!isSearching && selectedType === 'All'">
             <h1 class="text-4xl font-bold mt-4">All Albums</h1>
-            <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
             <div class="all-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div class="all-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
