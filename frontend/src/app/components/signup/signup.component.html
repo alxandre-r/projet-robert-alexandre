@@ -8,7 +8,7 @@
         <!-- Formulaire d'inscription -->
         <div *ngIf="!registrationSuccess">
             <div *ngIf="!registrationSuccess" class="flex items-center justify-center">
-                <div class="md:w-1/3 p-4 rounded-lg bg-white bg-opacity-90 md:mt-16 md:text-base">
+                <div class="md:w-1/3 md:p-4 rounded-lg bg-white bg-opacity-90 md:mt-16 md:text-base text-xs">
                     <form class="rounded px-8 pt-6 mb-4" (ngSubmit)="submitForm(signupForm)" #signupForm="ngForm">
                         <!-- Prénom et Nom -->
                         <div class="mb-4 flex">
