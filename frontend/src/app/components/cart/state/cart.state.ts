@@ -19,9 +19,9 @@ export interface CartStateModel {
   
   
     @Selector()
-      static getCartProducts(state: CartStateModel) {
-          return state.items;
-      }
+    static getCartProducts(state: CartStateModel) {
+      return state.items || [];
+    }
   
       @Selector()
       static getCartTotalPrice(state: CartStateModel){
@@ -38,8 +38,6 @@ export interface CartStateModel {
       @Action(AddToCart)
       addToCart(ctx: StateContext<CartStateModel>, action: AddToCart) {
           const state = ctx.getState();
-          console.log('cart.state.ts : AddToCart action:');
-          console.log(action.product);
           const baseProduct: ProductBase = {
               product: action.product,
               quantity: 1,
@@ -52,15 +50,13 @@ export interface CartStateModel {
       }
 
       @Action(RemoveFromCart)
-      removeFromCart(ctx: StateContext<CartStateModel>, action: RemoveFromCart) {
-          const state = ctx.getState();
-          const productToRemove = state.items.find(item => Number(item.product.id) === Number(action.productId));
-          if (productToRemove) {
-              ctx.setState({
-                  items: state.items.filter(item => item !== productToRemove)
-              });
-          }
-      }
+      supprimerProduit(ctx: StateContext<CartStateModel>, action: RemoveFromCart) {
+        const state = ctx.getState();
+        const productToRemove = state.items.find(product => product.id === action.productId)?.id;
+        ctx.patchState({
+          items: state.items.filter(product => product.id !== action.productId)
+        })
+    }
   
       @Action(ClearCart)
       clearCart(ctx: StateContext<CartStateModel>){

@@ -9,7 +9,7 @@
                     <select
                         class="h-full rounded-l appearance-none bg-white text-gray-700 py-4 px-8 pr-8 leading-tight focus:bg-white focus:border-gray-500 border-r"
                         (change)="filterByType($event)">
-                        <option>Tous les types</option>
+                        <option>All</option>
                         <option>Mini Album</option>
                         <option>Single Album</option>
                         <option>Studio Album</option>
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Mini albums list -->
-        <div *ngIf="!isSearching && (selectedType === 'Tous les types' || selectedType === 'Mini Album')">
+        <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Mini Album')">
             <h1 class="text-4xl font-bold mt-4">Mini Albums</h1>
             <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
             <div class="mini-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
@@ -69,7 +69,7 @@
         </div>
 
         <!-- Single albums list -->
-        <div *ngIf="!isSearching && (selectedType === 'Tous les types' || selectedType === 'Single Album')">
+        <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Single Album')">
             <h1 class="text-4xl font-bold mt-4">Single Albums</h1>
             <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
             <div class="single-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
@@ -86,7 +86,7 @@
         </div>
 
         <!-- Studio albums list -->
-        <div *ngIf="!isSearching && (selectedType === 'Tous les types' || selectedType === 'Studio Album')">
+        <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Studio Album')">
             <h1 class="text-4xl font-bold mt-4">Studio Albums</h1>
             <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
             <div class="studio-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
@@ -103,7 +103,7 @@
         </div>
 
         <!-- All albums list -->
-        <div *ngIf="!isSearching && selectedType === 'Tous les types'">
+        <div *ngIf="!isSearching && selectedType === 'All'">
             <h1 class="text-4xl font-bold mt-4">All Albums</h1>
             <h1 class="text-4xl font-bold mb-4">_________________________________________________________</h1>
             <div class="all-album-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">

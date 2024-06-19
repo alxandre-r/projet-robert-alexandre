@@ -24,7 +24,8 @@ export class SignUpComponent {
     return form.valid ?? false;
   }
 
-  submitForm(signupForm: NgForm) {
+  submitForm(signupForm: NgForm, event: Event) {
+    event.preventDefault();
     if (!this.isFormValid(signupForm)) {
       this.formError = true;
       this.errorMessage = 'Please fill all required fields.';
@@ -35,6 +36,7 @@ export class SignUpComponent {
       response => {
         this.registrationSuccess = true;
         signupForm.resetForm();
+        this.redirectToLogin(); // Redirect to login after successful registration
       },
       error => {
         console.error('Registration error:', error);
@@ -45,8 +47,6 @@ export class SignUpComponent {
   }
 
   redirectToLogin() {
-    // Redirection vers la page de connexion
-    console.log('Redirecting to login');
-    this.router.navigate(['/login']);
+    this.router.navigate(['./login']);
   }
 }

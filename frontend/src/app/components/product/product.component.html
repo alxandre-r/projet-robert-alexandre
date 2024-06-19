@@ -26,7 +26,7 @@
                 </div>
             </div>
             <!-- Bouton Ajouter au panier -->
-            <button class="bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline self-end" (click)="addToCart(product)">
+            <button class="bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline self-end" (click)="addToCart(product)" (click)="showSuccessPopup=true">
                 Ajouter au panier
             </button>
         </div>
@@ -48,4 +48,18 @@
             </div>
         </ng-container>
     </div> 
+
+    <!-- Popup de succès d'ajout au panier -->
+    <div *ngIf="showSuccessPopup" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75">
+        <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold mb-8">Product added to cart !</h2>
+                <p class="text-gray-700 mb-4">The product has been successfully added to your cart.</p>
+                <div class="flex justify-between mt-8">
+                    <button (click)="showSuccessPopup=false" class="bg-gray-200 text-black px-4 py-2 rounded-lg focus:outline-none">Continue Shopping</button>
+                    <button (click)="redirectToCart()" class="bg-black text-white px-4 py-2 rounded-lg focus:outline-none">Go to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

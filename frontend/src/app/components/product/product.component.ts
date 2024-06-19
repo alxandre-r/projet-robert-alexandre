@@ -20,6 +20,7 @@ export class ProductComponent {
   productId: number | undefined;
   product: Product | undefined;
   products! : Observable<Product[]>;
+  showSuccessPopup = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,6 +56,10 @@ export class ProductComponent {
   redirectToProduct(album_name: string) {
     window.scrollTo(0, 0);
     this.router.navigate(['./product', album_name]);
+  }
+
+  redirectToCart() {
+    this.router.navigate(['./cart']);
   }
 
   getProductImageUrl(): string {

@@ -16,7 +16,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class ProductListComponent {
   products!: Observable<Product[]>;
-  selectedType = 'Tous les types';
+  selectedType = 'All';
   searchQuery = '';
   isSearching = false;  // Variable to track if a search is active
 
@@ -32,7 +32,7 @@ export class ProductListComponent {
       switchMap(([selectedType, searchQuery]) => {
         this.isSearching = searchQuery.length > 0;
         let params = new HttpParams();
-        if (selectedType && selectedType !== 'Tous les types') {
+        if (selectedType && selectedType !== 'All') {
           params = params.set('type', selectedType);
         }
         if (searchQuery) {
