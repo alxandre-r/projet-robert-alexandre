@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/signup/signup.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CartComponent } from './components/cart/cart.component';
 import { ProductComponent } from './components/product/product.component'; 
 import { ProductListComponent } from './components/product-list/product-list.component';
 
@@ -13,7 +13,7 @@ export const routes: Routes = [
 
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignUpComponent },
-    { path: 'checkout', component: CheckoutComponent },
+    { path: 'cart', component: CartComponent },
     { path: 'product/:id', component: ProductComponent }
 ];
 

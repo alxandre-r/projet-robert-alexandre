@@ -32,7 +32,7 @@ export class HeaderComponent {
   }
 
   redirectToCheckout() {
-    this.router.navigate(['checkout']);
+    this.router.navigate(['cart']);
   }
 
   onLogout() {

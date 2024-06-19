@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
 import { Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { ApiService } from '../../services/api.service';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent {
   products!: Observable<Product[]>;
   selectedType = 'Tous les types';
   searchQuery = '';
