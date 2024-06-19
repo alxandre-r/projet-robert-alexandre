@@ -38,6 +38,7 @@
         <div *ngIf="isSearching">
             <h1 class="text-4xl font-bold mt-4">Search Results</h1>
             <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 md:hidden">______________________</h1>
             <div class="all-album-list grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div class="all-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
@@ -53,10 +54,11 @@
         <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Mini Album')">
             <h1 class="text-4xl font-bold mt-4">Mini Albums</h1>
             <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 md:hidden">______________________</h1>
             <div class="mini-album-list grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div *ngIf="item.album_type === 'Mini Album'" class="mini-album-item bg-white p-4 shadow-md rounded-lg mx-auto flex flex-col items-center justify-center">
-                        <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer">
+                        <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer rounded-lg" (click)="redirectToProduct(item.id.toString())">
                         <p class="font-semibold text-center">{{item.album_name}}</p>
                         <p class="font-bold text-center">{{item.price}}€</p>
                     </div>
@@ -68,11 +70,12 @@
         <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Single Album')">
             <h1 class="text-4xl font-bold mt-4">Single Albums</h1>
             <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 md:hidden">______________________</h1>
             <div class="single-album-list grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div *ngIf="item.album_type === 'Single Album'">
                         <div class="single-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
-                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer rounded-lg" (click)="redirectToProduct(item.id.toString())">
                             <p class="font-semibold text-center">{{item.album_name}}</p>
                             <p class="font-bold text-center">{{item.price}}€</p>
                         </div>
@@ -81,15 +84,17 @@
             </div>
         </div>
 
+
         <!-- Studio albums list -->
         <div *ngIf="!isSearching && (selectedType === 'All' || selectedType === 'Studio Album')">
             <h1 class="text-4xl font-bold mt-4">Studio Albums</h1>
             <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 md:hidden">______________________</h1>
             <div class="studio-album-list grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div *ngIf="item.album_type === 'Studio Album'">
                         <div class="studio-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
-                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                            <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer rounded-lg" (click)="redirectToProduct(item.id.toString())">
                             <p class="font-semibold text-center">{{item.album_name}}</p>
                             <p class="font-bold text-center">{{item.price}}€</p>
                         </div>
@@ -102,10 +107,11 @@
         <div *ngIf="!isSearching && selectedType === 'All'">
             <h1 class="text-4xl font-bold mt-4">All Albums</h1>
             <h1 class="text-4xl font-bold mb-4 hidden md:block">_________________________________________________________</h1>
+            <h1 class="text-4xl font-bold mb-4 md:hidden">______________________</h1>
             <div class="all-album-list grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-32">
                 <ng-container *ngFor="let item of products | async">
                     <div class="all-album-list bg-white p-4 shadow-md rounded-lg mx-auto">
-                        <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer" (click)="redirectToProduct(item.id.toString())">
+                        <img [src]="'assets/images/products/' + item.id + '.jpg'" alt="product picture" class="w-full h-auto mb-2 mx-auto transform transition-transform hover:scale-105 cursor-pointer rounded-lg" (click)="redirectToProduct(item.id.toString())">
                         <p class="font-semibold text-center">{{item.album_name}}</p>
                         <p class="font-bold text-center">{{item.price}}€</p>
                     </div>
