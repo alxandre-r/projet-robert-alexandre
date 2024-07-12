@@ -18,7 +18,8 @@ export class ProductListComponent {
   products!: Observable<Product[]>;
   selectedType = 'All';
   searchQuery = '';
-  isSearching = false;  // Variable to track if a search is active
+  isSearching = false;
+  albumTypes = ['Mini Album', 'Single Album', 'Studio Album', 'All'];
 
   private selectedType$ = new BehaviorSubject<string>(this.selectedType);
   private searchQuery$ = new BehaviorSubject<string>(this.searchQuery);
